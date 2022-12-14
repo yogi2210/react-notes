@@ -1,17 +1,25 @@
 
 import './App.css';
+import {Planet} from './planet.js'
 
 function App() {
  
-  const age = 10
-  const isGreen = true
+  const planets = [
+    {name : "Mars", isGasPlanet : false },
+    {name : "Earth", isGasPlanet : false },
+    {name : "Jupiter", isGasPlanet : true},
+    {name : "Venus", isGasPlanet : false },
+    {name : "Neptune", isGasPlanet : true},
+    {name : "Uranus", isGasPlanet : true}
+    
+  ]
+  
  
   return (
     <div className="App">
-     {age >= 18 ? <h1>Over Age</h1> : <h1>Under Age</h1>  }
-     <h1 style={{color : isGreen ? "green" : "red" }} >This Text Has Color</h1>
-
-    {true && <h1>Only visible if true</h1> }
+     {planets.map((planet, key)=>{
+        return !planet.isGasPlanet && <Planet name = {planet.name}  />
+     })}
     </div>
   );
 }
