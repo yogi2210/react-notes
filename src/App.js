@@ -11,7 +11,7 @@ function App() {
      {age >= 18 ? <h1>Over Age</h1> : <h1>Under Age</h1>  }
      <h1 style={{color : isGreen ? "green" : "red" }} >This Text Has Color</h1>
 
-
+    {true && <h1>Only visible if true</h1> }
     </div>
   );
 }
