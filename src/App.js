@@ -25,19 +25,24 @@ import {useState} from "react";
 //   );
 // }
 function App() {
-  const [inputValue, setInputValue] = useState("");
+  const [value, setValue] = useState(0);
 
- const handleInputValue = (e)=>{
-    setInputValue(e.target.value)
- } 
+  const increaseValue = () =>{
+   setValue(value + 1)
+  } 
+  const decreaseValue = () =>{
+   setValue(value - 1)
+  } 
+  const setToZero = () =>{
+   setValue(0)
+  } 
 
- return (
+  return (
   <div className='App' >
-      <input type="text"  onChange={handleInputValue} />
-       <div>
-        
-        {inputValue}
-        </div> 
+      <button onClick={increaseValue} >Increase</button>
+      <button onClick={decreaseValue} >Decrease</button>
+      <button onClick={setToZero} >set to zero</button>
+      {value}
   </div>
  )
 
