@@ -1,3 +1,6 @@
+#BAD MERGING
+Due to bad merging all the files were overwritten by typescript files. To look at other files go the commit history. 
+
 # react query
 we should avoid using fetch and useEffect to fetch data from API. it is bad practice instead we should use React Query. react query is not the replacement for fetch or Axios, infact we still use fetch or Axios but thi time we data to react query. 
 
