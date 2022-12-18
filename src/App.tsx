@@ -1,29 +1,37 @@
-import React from 'react';
+import './App.css';
 
-import "./App.css"
-import { Person, Country } from "./components/Person"
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-function App(){
+import {Home} from './pages/Home';
+import {Contact} from './pages/Contact';
+import {Login} from './pages/Login';
 
-  // creating function in typescript that take name and return age
-
-  // const getAge = (name : string): number =>{
-  //   return 99
-  // }
+import { Provider } from "react-redux";
+import { store } from './store'
 
 
-    return (
-        <div className="classname">
-            <Person
-                name="Pedro"
-                email="yogi.2210@gmail.com"
-                age= {21}
-                isMarried = {false}
-                friends={["khopa", "amy2", "gaj", "abhi"]}
-                country= {Country.India}
-            />
-        </div>
-    )
+
+function App() {
+
+    
+  return (
+    <div className="App" >
+        <Provider store = {store} >
+        <Router>
+            <Link to='/' >Home</Link>
+            <Link to='/login' >Login</Link>
+            <Link to='/contact' >Contact</Link>
+             <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/contact" element={<Contact/>} />
+            </Routes>
+        </Router>
+        </Provider>
+    </div>
+ )
+
 }
 
-export default App
+
+export default App;
